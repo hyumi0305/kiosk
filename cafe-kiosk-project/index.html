@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta name="description" content="카페 셀프 주문 키오스크">
+  <title>우리 카페 키오스크</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="처음 화면">
+        <span class="brand-mark" aria-hidden="true">☕</span>
+        <span class="brand-name">우리 카페</span>
+      </a>
+      <span class="language-label">한국어</span>
+    </header>
+
+    <main>
+      <section class="screen" id="start-screen" aria-labelledby="welcome-title">
+        <p class="eyebrow">WELCOME</p>
+        <h1 id="welcome-title">반갑습니다!<br>주문을 시작해 주세요.</h1>
+        <p class="description">이용하실 방법을 선택해 주세요.</p>
+
+        <div class="choice-grid">
+          <button class="choice-card" type="button" data-order-type="dine-in">
+            <span class="choice-icon" aria-hidden="true">🍽️</span>
+            <span class="choice-title">매장에서 먹고 가기</span>
+            <span class="choice-subtitle">FOR HERE</span>
+          </button>
+          <button class="choice-card" type="button" data-order-type="takeout">
+            <span class="choice-icon" aria-hidden="true">🥡</span>
+            <span class="choice-title">포장하기</span>
+            <span class="choice-subtitle">TAKE OUT</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="next-screen" aria-labelledby="next-title" hidden>
+        <p class="eyebrow">ORDER START</p>
+        <h1 id="next-title">주문 방식이<br>선택되었습니다.</h1>
+        <div class="next-panel">
+          <p class="selected-type" id="selected-type" aria-live="polite"></p>
+          <p class="next-note">
+            다음 단계에는 메뉴 선택 화면을 연결할 예정입니다.<br>
+            현재 버전은 첫 화면과 주문 방식 선택까지 구현되어 있습니다.
+          </p>
+          <div class="action-row">
+            <button class="button button-primary" id="menu-button" type="button">메뉴 선택으로 이동</button>
+            <button class="button button-secondary" id="back-button" type="button">뒤로 가기</button>
+          </div>
+          <p class="message" id="message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 우리 카페 · KIOSK</footer>
+  </div>
+</body>
+</html>
